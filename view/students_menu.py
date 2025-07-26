@@ -1,8 +1,10 @@
+from utils import functions
+
 def students_menu():
+    functions.clear_view()
     print("====================================")
     print("Manage Students")
     print("====================================")
-    print("\n")
     
     print("Please choose an option: \n")
     
