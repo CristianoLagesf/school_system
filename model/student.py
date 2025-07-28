@@ -1,5 +1,8 @@
-from person import Person
+from model import person
 
-class Student(Person):
-    def __init__(self, name, idade, id):
-        super().__init__(name, idade, id)
+class Student(person.Person):
+    table_name = 'student'
+    def __init__(self, name, age, id):
+        super().__init__(name, age, id)
+        
+    
