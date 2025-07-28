@@ -1,13 +1,15 @@
+from control.logic_control import logic_student
+
 def menu_controller(option):
     match option:
         case 1:
-            students_menu.students_menu()
+            logic_student.create_student()
         case 2:
-            professors_menu.professors_menu()
+            logic_student.update_student()
         case 3:
-            courses_menu.courses_menu()
+            logic_student.delete_student()
         case 4:
-            enrollment_menu.enrollment_menu()
+            print("progressss")
         case 5:
             print("progressss")
         case 6:
