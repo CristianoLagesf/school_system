@@ -1,6 +1,7 @@
 import sqlite3
+from model.course import DB_PATH
 
-DB_PATH = 'shool.db'
+
 
 class Person:
     table_name = None
@@ -8,14 +9,15 @@ class Person:
         self._name = name
         self._age = age
         self._id = id
+    
     @classmethod
-    def create(cls,name,age,id):
+    def create(cls,name,age):
         conn = sqlite3.connect(DB_PATH)
         curso = conn.cursor()
         try:
             curso.execute(
-                f"INSERT INTO {cls.table_name} (id,name,age) VALUES (?,?,?)",
-                (id,name,age)
+                f"INSERT INTO {cls.table_name} (name,age) VALUES (?,?)",
+                (name,age)
             )
             conn.commit()
             print(f"{cls.table_name.capitalize()} added successfully!")
